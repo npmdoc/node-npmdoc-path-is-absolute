@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/sindresorhus/path-is-absolute#readme"
-
-    >path-is-absolute (v1.0.1)</a>
+    <a href="https://github.com/sindresorhus/path-is-absolute#readme">path-is-absolute (v1.0.1)</a>
 </h1>
 <h4>Node.js 0.12 path.isAbsolute() ponyfill</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.path-is-absolute">module path-is-absolute</a><ol>
 
@@ -139,7 +132,7 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function posix(path) {
-	return path.charAt(0) === &#x27;/&#x27;;
+	return path.charAt(0) === '/';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -154,24 +147,24 @@
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function posix(path) {
-	return path.charAt(0) === &#x27;/&#x27;;
+	return path.charAt(0) === '/';
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 // Running on Windows
-pathIsAbsolute(&#x27;C:/Users/foo&#x27;);
-//=&#x3e; true
-pathIsAbsolute(&#x27;/home/foo&#x27;);
-//=&#x3e; false
+pathIsAbsolute('C:/Users/foo');
+//=&gt; true
+pathIsAbsolute('/home/foo');
+//=&gt; false
 
 // Running on any OS
-pathIsAbsolute.<span class="apidocCodeKeywordSpan">posix</span>(&#x27;/home/foo&#x27;);
-//=&#x3e; true
-pathIsAbsolute.posix(&#x27;C:/Users/foo&#x27;);
-//=&#x3e; false
-pathIsAbsolute.win32(&#x27;C:/Users/foo&#x27;);
-//=&#x3e; true
-pathIsAbsolute.win32(&#x27;/home/foo&#x27;);
-//=&#x3e; false
+pathIsAbsolute.<span class="apidocCodeKeywordSpan">posix</span>('/home/foo');
+//=&gt; true
+pathIsAbsolute.posix('C:/Users/foo');
+//=&gt; false
+pathIsAbsolute.win32('C:/Users/foo');
+//=&gt; true
+pathIsAbsolute.win32('/home/foo');
+//=&gt; false
 ...</pre></li>
     </ul>
 
@@ -203,24 +196,24 @@ pathIsAbsolute.win32(&#x27;/home/foo&#x27;);
 	// https://github.com/nodejs/node/blob/b3fcc245fb25539909ef1d5eaa01dbf92e168633/lib/path.js#L56
 	var splitDeviceRe = /^([a-zA-Z]:|[\\\/]{2}[^\\\/]+[\\\/]+[^\\\/]+)?([\\\/])?([\s\S]*?)$/;
 	var result = splitDeviceRe.exec(path);
-	var device = result[1] || &#x27;&#x27;;
-	var isUnc = Boolean(device &#x26;&#x26; device.charAt(1) !== &#x27;:&#x27;);
+	var device = result[1] || '';
+	var isUnc = Boolean(device &amp;&amp; device.charAt(1) !== ':');
 
 	// UNC paths are always absolute
 	return Boolean(result[2] || isUnc);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-//=&#x3e; false
+//=&gt; false
 
 // Running on any OS
-pathIsAbsolute.posix(&#x27;/home/foo&#x27;);
-//=&#x3e; true
-pathIsAbsolute.posix(&#x27;C:/Users/foo&#x27;);
-//=&#x3e; false
-pathIsAbsolute.<span class="apidocCodeKeywordSpan">win32</span>(&#x27;C:/Users/foo&#x27;);
-//=&#x3e; true
-pathIsAbsolute.win32(&#x27;/home/foo&#x27;);
-//=&#x3e; false
+pathIsAbsolute.posix('/home/foo');
+//=&gt; true
+pathIsAbsolute.posix('C:/Users/foo');
+//=&gt; false
+pathIsAbsolute.<span class="apidocCodeKeywordSpan">win32</span>('C:/Users/foo');
+//=&gt; true
+pathIsAbsolute.win32('/home/foo');
+//=&gt; false
 ```
 
 
@@ -264,24 +257,24 @@ pathIsAbsolute.win32(&#x27;/home/foo&#x27;);
 	// https://github.com/nodejs/node/blob/b3fcc245fb25539909ef1d5eaa01dbf92e168633/lib/path.js#L56
 	var splitDeviceRe = /^([a-zA-Z]:|[\\\/]{2}[^\\\/]+[\\\/]+[^\\\/]+)?([\\\/])?([\s\S]*?)$/;
 	var result = splitDeviceRe.exec(path);
-	var device = result[1] || &#x27;&#x27;;
-	var isUnc = Boolean(device &#x26;&#x26; device.charAt(1) !== &#x27;:&#x27;);
+	var device = result[1] || '';
+	var isUnc = Boolean(device &amp;&amp; device.charAt(1) !== ':');
 
 	// UNC paths are always absolute
 	return Boolean(result[2] || isUnc);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-//=&#x3e; false
+//=&gt; false
 
 // Running on any OS
-pathIsAbsolute.posix(&#x27;/home/foo&#x27;);
-//=&#x3e; true
-pathIsAbsolute.posix(&#x27;C:/Users/foo&#x27;);
-//=&#x3e; false
-pathIsAbsolute.<span class="apidocCodeKeywordSpan">win32</span>(&#x27;C:/Users/foo&#x27;);
-//=&#x3e; true
-pathIsAbsolute.win32(&#x27;/home/foo&#x27;);
-//=&#x3e; false
+pathIsAbsolute.posix('/home/foo');
+//=&gt; true
+pathIsAbsolute.posix('C:/Users/foo');
+//=&gt; false
+pathIsAbsolute.<span class="apidocCodeKeywordSpan">win32</span>('C:/Users/foo');
+//=&gt; true
+pathIsAbsolute.win32('/home/foo');
+//=&gt; false
 ```
 
 
@@ -298,3 +291,4 @@ pathIsAbsolute.win32(&#x27;/home/foo&#x27;);
     ]
 </div>
 </div>
+</body></html>

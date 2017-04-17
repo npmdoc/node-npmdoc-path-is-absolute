@@ -63,9 +63,27 @@
 
         <li>
 
+            <a class="apidocElementLiA" href="#apidoc.element.path-is-absolute.path-is-absolute">
+            function <span class="apidocSignatureSpan"></span>path-is-absolute
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
             <a class="apidocElementLiA" href="#apidoc.element.path-is-absolute.posix">
             function <span class="apidocSignatureSpan">path-is-absolute.</span>posix
             <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-is-absolute.toString">
+            function <span class="apidocSignatureSpan">path-is-absolute.</span>toString
+            <span class="apidocSignatureSpan">()</span>
             </a>
 
         </li>
@@ -81,10 +99,51 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.path-is-absolute.toString">module path-is-absolute.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-is-absolute.toString.toString">
+            function <span class="apidocSignatureSpan">path-is-absolute.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.path-is-absolute.win32">module path-is-absolute.win32</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.path-is-absolute.win32.win32">
+            function <span class="apidocSignatureSpan">path-is-absolute.</span>win32
+            <span class="apidocSignatureSpan">(path)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.path-is-absolute" id="apidoc.module.path-is-absolute">module path-is-absolute</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.path-is-absolute.path-is-absolute" id="apidoc.element.path-is-absolute.path-is-absolute">
+        function <span class="apidocSignatureSpan"></span>path-is-absolute
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function posix(path) {
+	return path.charAt(0) === &#x27;/&#x27;;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 
     <h2>
@@ -119,7 +178,83 @@ pathIsAbsolute.win32(&#x27;/home/foo&#x27;);
 
 
     <h2>
+        <a href="#apidoc.element.path-is-absolute.toString" id="apidoc.element.path-is-absolute.toString">
+        function <span class="apidocSignatureSpan">path-is-absolute.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
         <a href="#apidoc.element.path-is-absolute.win32" id="apidoc.element.path-is-absolute.win32">
+        function <span class="apidocSignatureSpan">path-is-absolute.</span>win32
+        <span class="apidocSignatureSpan">(path)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function win32(path) {
+	// https://github.com/nodejs/node/blob/b3fcc245fb25539909ef1d5eaa01dbf92e168633/lib/path.js#L56
+	var splitDeviceRe = /^([a-zA-Z]:|[\\\/]{2}[^\\\/]+[\\\/]+[^\\\/]+)?([\\\/])?([\s\S]*?)$/;
+	var result = splitDeviceRe.exec(path);
+	var device = result[1] || &#x27;&#x27;;
+	var isUnc = Boolean(device &#x26;&#x26; device.charAt(1) !== &#x27;:&#x27;);
+
+	// UNC paths are always absolute
+	return Boolean(result[2] || isUnc);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+//=&#x3e; false
+
+// Running on any OS
+pathIsAbsolute.posix(&#x27;/home/foo&#x27;);
+//=&#x3e; true
+pathIsAbsolute.posix(&#x27;C:/Users/foo&#x27;);
+//=&#x3e; false
+pathIsAbsolute.<span class="apidocCodeKeywordSpan">win32</span>(&#x27;C:/Users/foo&#x27;);
+//=&#x3e; true
+pathIsAbsolute.win32(&#x27;/home/foo&#x27;);
+//=&#x3e; false
+```
+
+
+## API
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.path-is-absolute.toString" id="apidoc.module.path-is-absolute.toString">module path-is-absolute.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.path-is-absolute.toString.toString" id="apidoc.element.path-is-absolute.toString.toString">
+        function <span class="apidocSignatureSpan">path-is-absolute.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.path-is-absolute.win32" id="apidoc.module.path-is-absolute.win32">module path-is-absolute.win32</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.path-is-absolute.win32.win32" id="apidoc.element.path-is-absolute.win32.win32">
         function <span class="apidocSignatureSpan">path-is-absolute.</span>win32
         <span class="apidocSignatureSpan">(path)</span>
         </a>
