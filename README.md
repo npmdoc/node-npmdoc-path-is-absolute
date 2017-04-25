@@ -1,4 +1,7 @@
-# api documentation for  [path-is-absolute (v1.0.1)](https://github.com/sindresorhus/path-is-absolute#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-path-is-absolute.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-path-is-absolute) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-path-is-absolute.svg)](https://travis-ci.org/npmdoc/node-npmdoc-path-is-absolute)
+# npmdoc-path-is-absolute
+
+#### basic api documentation for  [path-is-absolute (v1.0.1)](https://github.com/sindresorhus/path-is-absolute#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-path-is-absolute.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-path-is-absolute) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-path-is-absolute.svg)](https://travis-ci.org/npmdoc/node-npmdoc-path-is-absolute)
+
 #### Node.js 0.12 path.isAbsolute() ponyfill
 
 [![NPM](https://nodei.co/npm/path-is-absolute.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/path-is-absolute)
@@ -77,7 +80,8 @@
     "scripts": {
         "test": "xo && node test.js"
     },
-    "version": "1.0.1"
+    "version": "1.0.1",
+    "bin": {}
 }
 ```
 
